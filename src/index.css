@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF8F0;
+  --color-card: #FFFDF8;
+  --color-brown: #3D2314;
+  --color-brown-light: #7A4F3A;
+  --color-terra: #E07A5F;
+  --color-terra-dark: #C4624A;
+  --color-sage: #7A9E87;
+  --color-sage-dark: #5E8270;
+  --color-terra-50: #FDF0EC;
+
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
