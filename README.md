@@ -2,7 +2,7 @@
 
 React frontend for **Plushie Tale**, an AI-powered web app that generates personalised bedtime stories based on a child's plushie.
 
-**Live demo:** http://56.228.67.183  
+**Live demo:** https://plushietale.com  
 **Backend repo:** https://github.com/ingwee219/plushietale-backend
 
 ---
