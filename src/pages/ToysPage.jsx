@@ -40,12 +40,12 @@ export default function ToysPage() {
     <div>
       {/* 헤더 */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="font-display font-bold text-2xl text-brown">My Toys</h1>
+        <h1 className="font-display font-bold text-2xl text-brown">My Plushies</h1>
         <Link
           to="/toys/new"
           className="bg-terra text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-terra-dark transition-colors"
         >
-          + Add Toy
+          + Add Plushie
         </Link>
       </div>
 
