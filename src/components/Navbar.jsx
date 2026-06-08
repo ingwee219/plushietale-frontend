@@ -11,7 +11,7 @@ export default function Navbar() {
   }
 
   const navLinkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors ${
+    `hidden md:inline text-sm font-medium transition-colors ${
       isActive ? 'text-terra' : 'text-brown-light hover:text-brown'
     }`
 
@@ -34,7 +34,7 @@ export default function Navbar() {
             <NavLink to="/board" className={navLinkClass}>Board</NavLink>
 
             {/* 프로필 드롭다운 대신 간단하게 */}
-            <div className="flex items-center gap-3 pl-4 border-l border-terra-50">
+            <div className="hidden md:flex items-center gap-3 pl-4 border-l border-terra-50">
               <NavLink
                 to="/profile"
                 className="text-sm font-medium text-brown-light hover:text-brown transition-colors"

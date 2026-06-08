@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { updateNickname, updatePassword, getMyPosts, getMyComments } from '../api/user'
 
 const TABS = ['Profile', 'My Posts', 'My Comments']
 
 export default function ProfilePage() {
-  const { user, refreshUser } = useAuth()
+  const { user, refreshUser, logout } = useAuth()
+  const navigate = useNavigate()
   const [tab, setTab] = useState('Profile')
 
   const [nickname, setNickname] = useState(user?.nickname || '')
@@ -80,6 +81,11 @@ export default function ProfilePage() {
 
   const isGoogleUser = user?.provider === 'GOOGLE'
 
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
+
   return (
     <div className="max-w-sm mx-auto">
       {/* 프로필 요약 */}
@@ -87,7 +93,7 @@ export default function ProfilePage() {
         <div className="w-12 h-12 rounded-full bg-terra-50 flex items-center justify-center text-2xl shrink-0">
           👤
         </div>
-        <div>
+        <div className="flex-1 min-w-0">
           <p className="font-display font-semibold text-brown">{user?.nickname}</p>
           <p className="text-brown-light text-sm">{user?.email}</p>
           {isGoogleUser && (
@@ -96,6 +102,12 @@ export default function ProfilePage() {
             </span>
           )}
         </div>
+        <button
+          onClick={handleLogout}
+          className="text-sm text-brown-light hover:text-terra transition-colors shrink-0"
+        >
+          Logout
+        </button>
       </div>
 
       {/* 탭 */}
