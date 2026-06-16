@@ -198,9 +198,18 @@ export default function PrivacyPolicyPage() {
 
           <Section title="8. Cookies & Local Storage">
             <p>
-              We use your browser's local storage to maintain your login session via a
-              secure authentication token (JWT). No tracking cookies or advertising cookies
-              are used. This storage is strictly necessary for the service to function.
+              <strong>Strictly necessary storage:</strong> we use your browser's local storage
+              to maintain your login session via a secure authentication token (JWT). This is
+              required for the service to function and is always active.
+            </p>
+            <p className="mt-3">
+              <strong>Analytics (optional):</strong> with your consent, we may use analytics
+              cookies to understand how the service is used so that we can improve it. These are
+              activated only if you opt in. You can change or withdraw your choice at any time
+              using the "Cookie settings" link in the footer.
+            </p>
+            <p className="mt-3">
+              We do not use advertising cookies.
             </p>
           </Section>
 

@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
+import { ConsentProvider } from './context/ConsentContext'
 import PrivateRoute from './components/PrivateRoute'
 import Layout from './components/Layout'
+import CookieConsent from './components/CookieConsent'
 
 // Pages
 import LandingPage from './pages/LandingPage'
@@ -21,8 +23,9 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 export default function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Routes>
+      <ConsentProvider>
+        <AuthProvider>
+          <Routes>
           {/* 공개 페이지 */}
           <Route path="/" element={<Layout hideFooter><LandingPage /></Layout>} />
           <Route path="/login" element={<LoginPage />} />
@@ -41,8 +44,10 @@ export default function App() {
             <Route path="/stories/:id" element={<Layout><StoryDetailPage /></Layout>} />
             <Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
           </Route>
-        </Routes>
-      </AuthProvider>
+          </Routes>
+          <CookieConsent />
+        </AuthProvider>
+      </ConsentProvider>
     </BrowserRouter>
   )
 }

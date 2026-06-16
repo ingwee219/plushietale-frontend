@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useConsent } from '../context/ConsentContext'
 
 const STORY_GENERATED_AT = '2026-06-04T12:00:00'
 
@@ -25,6 +26,8 @@ function getRelativeTime(dateStr) {
 }
 
 export default function LandingPage() {
+  const { openSettings } = useConsent()
+
   return (
     <div className="min-h-screen bg-cream">
 
@@ -232,9 +235,14 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-display font-bold text-brown">🧸 Plushie Tale</span>
           <p className="text-brown-light text-xs">© 2026 Plushie Tale. Made with love for little readers.</p>
-          <Link to="/privacy-policy" className="text-xs text-brown-light hover:text-terra transition-colors">
-            Privacy Policy
-          </Link>
+          <div className="flex items-center gap-4">
+            <button onClick={openSettings} className="text-xs text-brown-light hover:text-terra transition-colors">
+              Cookie settings
+            </button>
+            <Link to="/privacy-policy" className="text-xs text-brown-light hover:text-terra transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
 
