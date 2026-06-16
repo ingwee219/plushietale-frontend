@@ -114,6 +114,16 @@ export default function LoginPage() {
             >
               {loading ? 'Please wait...' : mode === 'login' ? 'Log In' : 'Create Account'}
             </button>
+
+            {mode === 'signup' && (
+              <p className="text-xs text-brown-light text-center mt-1">
+                By creating an account, you agree to our{' '}
+                <Link to="/privacy-policy" className="text-terra hover:underline">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+            )}
           </form>
 
           {/* 구분선 */}

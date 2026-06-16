@@ -16,6 +16,7 @@ import StoryDetailPage from './pages/StoryDetailPage'
 import BoardPage from './pages/BoardPage'
 import PostDetailPage from './pages/PostDetailPage'
 import ProfilePage from './pages/ProfilePage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 
 export default function App() {
   return (
@@ -23,9 +24,10 @@ export default function App() {
       <AuthProvider>
         <Routes>
           {/* 공개 페이지 */}
-          <Route path="/" element={<Layout><LandingPage /></Layout>} />
+          <Route path="/" element={<Layout hideFooter><LandingPage /></Layout>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/oauth2/callback" element={<OAuthCallbackPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/board" element={<Layout><BoardPage /></Layout>} />
           <Route path="/board/:id" element={<Layout><PostDetailPage /></Layout>} />
 

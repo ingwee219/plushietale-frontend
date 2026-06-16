@@ -232,6 +232,9 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-display font-bold text-brown">🧸 Plushie Tale</span>
           <p className="text-brown-light text-xs">© 2026 Plushie Tale. Made with love for little readers.</p>
+          <Link to="/privacy-policy" className="text-xs text-brown-light hover:text-terra transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </footer>
 
